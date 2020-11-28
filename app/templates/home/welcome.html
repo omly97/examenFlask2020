@@ -1,0 +1,227 @@
+{% extends "app_layout.html" %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block body %}
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#top">Flask | Master 1 TDSI</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ml-auto">
+                    <a class="nav-item nav-link active" href="#flask">Flask</a>
+                    <a class="nav-item nav-link active" href="#tdsi">TDSI</a>
+                    <a class="nav-item nav-link active" href="#figures">Figures</a>
+                    <a class="btn btn-primary ml-3" href="{{ url_for('auth.logout') }}">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Masthead -->
+    <header id="top" class="masthead text-white text-center">
+        <div class="overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-9 mx-auto">
+                        <h1 class="mb-5">Bonjour {{ current_user.nom }}</h1>
+                        <h3>Bienvenue sur notre site créé avec Flask, un micro framework trés Cool!</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Icons Grid -->
+    <section id="flask" class="features-icons bg-light text-center">
+        <div class="container">
+            <h2 class="mb-5">Un mot sur Flask</h2>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                        <div class="features-icons-icon d-flex">
+                            <i class="icon-screen-desktop m-auto text-primary"></i>
+                        </div>
+                        <h3>Flask ?</h3>
+                        <p class="lead mb-0">
+                            Flask est un micro-framework né d'une blague. 
+                            Open source, il se différencie par sa légèreté permettant de disposer
+                             d'une solide base de développement tout en conservant la flexibilité 
+                             et la lisibilité du langage de programmation Python.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                        <div class="features-icons-icon d-flex">
+                            <i class="icon-layers m-auto text-primary"></i>
+                        </div>
+                        <h3>Facilité</h3>
+                        <p class="lead mb-0">Facile à prendre en main, Falsk optimise 
+                            le processus de développement. Il accompagne ainsi les 
+                            entreprises dans leurs besoins en applications web 
+                            de petite et moyenne envergure.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="features-icons-item mx-auto mb-0 mb-lg-3">
+                        <div class="features-icons-icon d-flex">
+                            <i class="icon-check m-auto text-primary"></i>
+                        </div>
+                        <h3>Licence</h3>
+                        <p class="lead mb-0">Flask est distribué sous licence BSD 
+                            (pour Berkeley Software Distribution), une licence 
+                            libre et non restrictive. Elle permet donc à ses 
+                            utilisateurs de réutiliser et modifier le code à 
+                            leur convenance, y compris pour le bénéfice d'actions 
+                            commerciales.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Showcases -->
+    <section id="tdsi" class="showcase">
+        <div class="container-fluid p-0">
+            <h2 class="mb-5 mt-5 text-center">La formation TDSI</h2>
+            <div class="row no-gutters">
+                <div class="col-lg-6 order-lg-2 text-white showcase-img"
+                    style="background-image: url('../../static/images/math.jpg');"></div>
+                <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+                    <h2>Mathématiques</h2>
+                    <p class="lead mb-0">Algèbre et Applications</p>
+                </div>
+            </div>
+            <div class="row no-gutters">
+                <div class="col-lg-6 text-white showcase-img" 
+                    style="background-image: url('../../static/images/crypto.jpg');"></div>
+                <div class="col-lg-6 my-auto showcase-text">
+                    <h2>Cryptographie</h2>
+                    <p class="lead mb-0">Etudes et recherches de Cryptosystèmes 
+                        (Cryptographie moderne et Cryptographie Post Quantique)</p>
+                </div>
+            </div>
+            <div class="row no-gutters">
+                <div class="col-lg-6 order-lg-2 text-white showcase-img"
+                    style="background-image: url('../../static/images/coding.png');"></div>
+                <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+                    <h2>Génie logiciel</h2>
+                    <p class="lead mb-0">Analyse Informatique et 
+                        Création d'applications Web & Mobiles modernes et sécurisées</p>
+                </div>
+            </div>
+            <div class="row no-gutters">
+                <div class="col-lg-6 text-white showcase-img" 
+                    style="background-image: url('../../static/images/hacking.jpg');"></div>
+                <div class="col-lg-6 my-auto showcase-text">
+                    <h2>Sécurité</h2>
+                    <p class="lead mb-0">Sécurité des Systèmes, 
+                        Réseaux Informatiques et Base de données</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="figures" class="testimonials text-center bg-light">
+        <div class="container">
+            <h2 class="mb-5">Quelques Grandes figures</h2>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                        <img class="img-fluid rounded-circle mb-3" src="../../static/images/pr_omar_sanghare.jpg" alt="">
+                        <h5>Pr Mamadou Sangharé</h5>
+                        <p class="font-weight-light mb-0">
+                            Fondateur du Laboratoire. Il l'a créé en 1993 alors qu'il venait 
+                            juste de soutenir sa thèse d'état. Depuis il a formé cinq Professeurs 
+                            titulaires, plusieurs maîtres de conférences et fait soutenir 
+                            énormément de thèses.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                        <img class="img-fluid rounded-circle mb-3" src="../../static/images/pr_djiby_sow.png" alt="">
+                        <h5>Pr Djiby Sow</h5>
+                        <p class="font-weight-light mb-0">
+                            Titulaire des Universités (CAMES) de Classe Normale depuis 2012 en Mathématiques
+                            Cryptographie et Sécurité de l’Information - 
+                            Enseignant-chercheur au Département de Mathématiques et 
+                            Informatique, Faculté des Sciences et Techniques, 
+                            Université Cheikh Anta Diop (UCAD) de Dakar - 
+                            Responsable du Groupe de Recherche Mathématiques Discrètes et Cybersécurité
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                        <img class="img-fluid rounded-circle mb-3" src="../../static/images/pr_thiecoumba.jpg" alt="">
+                        <h5>Dr Jean Belo Klamti</h5>
+                        <p class="font-weight-light mb-0">
+                            Titulaire des Universités Équipe de Recherche en Codes 
+                            Correcteurs et Implantations Sécurisées Post-quantiques 
+                            (ERCISpq) Laboratoire d’Algèbre de Géométrie Algébrique 
+                            et Applications (LACGAA) Département de Mathématiques 
+                            et Informatiques Faculté des Sciences et Techniques 
+                            Université Cheikh Anta Diop - Membre fondateur du Laboratoire 
+                            d’Algèbre de Géométrie Algébrique et Applications (LACGAA) - 
+                            Responsable de l’Equipe de Recherche en Codes Correcteurs et 
+                            Implantations Sécurisées Post-quantiques (ERCISpq) - 
+                            Secrétaire Scientifique de l’école Doctorale Mathématiques et Informatique (EDMI) 
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+                    <ul class="list-inline mb-2">
+                        <li class="list-inline-item">
+                            <a href="#">About</a>
+                        </li>
+                        <li class="list-inline-item">&sdot;</li>
+                        <li class="list-inline-item">
+                            <a href="#">Contact</a>
+                        </li>
+                        <li class="list-inline-item">&sdot;</li>
+                        <li class="list-inline-item">
+                            <a href="#">Terms of Use</a>
+                        </li>
+                        <li class="list-inline-item">&sdot;</li>
+                        <li class="list-inline-item">
+                            <a href="#">Privacy Policy</a>
+                        </li>
+                    </ul>
+                    <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2019. All Rights Reserved.</p>
+                </div>
+                <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item mr-3">
+                            <a href="#">
+                                <i class="fab fa-facebook fa-2x fa-fw"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item mr-3">
+                            <a href="#">
+                                <i class="fab fa-twitter-square fa-2x fa-fw"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#">
+                                <i class="fab fa-instagram fa-2x fa-fw"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+{% endblock %}
