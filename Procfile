@@ -1,2 +1,2 @@
 web: gunicorn run:app
-init: FLASK_CONFIG=production
+init: FLASK_APP=run
