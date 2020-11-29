@@ -1,2 +1,2 @@
 web: gunicorn run:app
-init: FLASK_APP=run
+init: flask db init flask db migrate flask db update FLASK_APP=run
